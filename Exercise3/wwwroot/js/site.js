@@ -24,7 +24,7 @@ $("#btn-refresh").click(function (e) {
 });
 
 $("#btn-create").click(function (e) {
-  var data = {
+  let data = {
     FirstName: $("#create-fname").val(),
     LastName: $("#create-lname").val(),
     DateOfBirth: $("#create-dob").val(),
@@ -37,7 +37,7 @@ $("#btn-create").click(function (e) {
 });
 
 $("#btn-update").click(function (e) {
-  var data = {
+  let data = {
     Id: $("#update-id").val(),
     FirstName: $("#update-fname").val(),
     LastName: $("#update-lname").val(),
@@ -61,8 +61,7 @@ var AjaxRequest = async (
   method,
   url,
   data = null,
-  callback,
-  errorCallback = null
+  callback
 ) => {
   let options = {
     type: method,
