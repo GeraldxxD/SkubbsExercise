@@ -1,0 +1,44 @@
+﻿@model Exercise3.Models.Employee;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var dob =  Convert.ToDateTime(Model.DateOfBirth).ToString("yyyy-MM-dd");
+}
+
+<div class="card">
+    <div class="card-header">
+        <h5>Update Employee</h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+             <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-label" for="">Id</label>
+                    <input type="text" class="form-control" id="update-id" placeholder=".." value="@Model.Id" disabled>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-label" for="">First Name</label>
+                    <input type="text" class="form-control" placeholder=".." value="@Model.FirstName" id="update-fname">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-label" for="">Last Name</label>
+                    <input type="text" class="form-control" placeholder=".." value="@Model.LastName" id="update-lname">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-label" for="">Date of Birth</label>
+                    <input type="date" class="form-control" id="update-dob" value="@dob" >
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-secondary" id="btn-update">Update</button>
+            </div>
+        </div>
+
+    </div>
+</div>
