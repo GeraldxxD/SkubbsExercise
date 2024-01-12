@@ -81,8 +81,6 @@ var AjaxRequest = async (
     timeout: 120000,
   });
   $.ajax(options).fail((response) => {
-    ShowLoadingScreen(false);
-    if (!errorCallback) {
       let errMessage = "An error occured.";
       if (response.responseJSON && response.responseJSON.message) {
         errMessage = response.responseJSON.message;
@@ -90,8 +88,5 @@ var AjaxRequest = async (
         errMessage = response.statusText;
       }
       alert(errMessage);
-    } else {
-      errorCallback(response.responseJSON);
-    }
   });
 };
